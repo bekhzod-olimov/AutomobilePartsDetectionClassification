@@ -10,8 +10,20 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 torch.manual_seed(2023)
 
 class CustomDataset(Dataset):
+
+    """
+    This class gets several arguments and resuts dataset for training.
+    """
     
     def __init__(self, root, data, lang, transformations = None, im_files = [".jpg", ".png", ".jpeg"]):
+
+        """
+        Arguments:
+
+             root       - path to the dir with images, str;
+             
+        
+        """
         super().__init__()
         self.im_paths = glob(f"{root}/{data}/*/*{[im_file for im_file in im_files]}")
         if lang == "en": print("Obtaining images from the folders...")
