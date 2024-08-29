@@ -54,13 +54,16 @@ def run(args):
         
         """
 
+        # Initialize a dictionary object
         results = {}
+        # Get image and apply transformations
         im = tfs(Image.open(io.BytesIO(image_bytes)))
+        # Get prediction from the model and convert it to probability
         pred = torch.nn.functional.softmax(model(im.unsqueeze(0).data), dim = 1)
-
+        # Get top5 values and indices and squueze them
         vals, inds = torch.topk(pred, k = 5)
         vals, inds = vals.squeeze(0), inds.squeeze(0)
-
+        # For every value and index save them into the results dictionary
         for idx, (val, ind) in enumerate(zip(vals, inds)):
             results[f"top_{idx + 1}"] = cls_names[ind.item()]
 
