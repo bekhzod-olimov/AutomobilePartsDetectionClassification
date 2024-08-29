@@ -30,9 +30,12 @@ def run(args):
              json    - jsonified prediction of the AI model.
         
         """
-        im = json.loads(request.data)['im']
-        jpg_original = base64.b64decode(im)
 
+        # Load image using json
+        im = json.loads(request.data)['im']
+        # Get original image
+        jpg_original = base64.b64decode(im)
+        # Get AI models output
         results = get_prediction(model = model, cls_names = cls_names, image_bytes=jpg_original)
 
         return jsonify({"results": results})
