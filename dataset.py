@@ -20,7 +20,9 @@ class CustomDataset(Dataset):
         """
         Arguments:
 
-             root       - path to the dir with images, str;
+             root              - path to the dir with images, str;
+             data              - data name, str;
+             transformations   - transformations to be applied, torchvision compose object;
              
         
         """
