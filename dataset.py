@@ -27,7 +27,7 @@ class CustomDataset(Dataset):
         """
         
         super().__init__()
-
+        self.transformations = transformations
         # Get image paths
         self.im_paths = glob(f"{root}/{data}/*/*{[im_file for im_file in im_files]}")
         # Choose language for verbose
@@ -41,9 +41,8 @@ class CustomDataset(Dataset):
             cls_name = self.get_dir_name(im_path).split("/")[-1]
             # Add the class name to the list
             if cls_name not in self.cls_names: self.cls_names.append(cls_name)
-            
+        # Create class names dictionary    
         self.classes_dict = {cls_name: i for cls_name, i in zip(self.cls_names, range(len(self.cls_names)))}
-        self.transformations = transformations
         
     def __len__(self): return len(self.im_paths)
 
