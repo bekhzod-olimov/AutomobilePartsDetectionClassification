@@ -83,6 +83,5 @@ if __name__ == "__main__":
     
     # Run the code
     run(args)
-    
-    app.run(host='0.0.0.0', debug=False, port=8610)
-    
+    # Run the application
+    app.run(host = "0.0.0.0", debug = False, port = 8610)
