@@ -1,9 +1,9 @@
+# Import libraries
 import io, json, timm, base64, torch, argparse, pickle
 from torchvision import models
-from PIL import Image
+from PIL import Image; from utils import load_model
 from flask import Flask, jsonify, request
 from transformations import get_tfs
-from utils import load_model
 
 app = Flask(__name__)
 
