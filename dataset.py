@@ -1,10 +1,12 @@
+# Import libraries
 import torch, os, numpy as np, pandas as pd, pickle
 from glob import glob
 from PIL import Image, ImageFile
 from torch.utils.data import random_split, Dataset, DataLoader
 from torchvision import transforms as T
+# To load large file image files
 ImageFile.LOAD_TRUNCATED_IMAGES = True
-
+# Set the manual seed
 torch.manual_seed(2023)
 
 class CustomDataset(Dataset):
