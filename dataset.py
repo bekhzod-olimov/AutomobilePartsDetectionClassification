@@ -63,8 +63,10 @@ class CustomDataset(Dataset):
             cls_name = self.get_dir_name(im).split("/")[-1]
             # Add class name to the dictionary
             if cls_name in di: di[cls_name] += 1
+            # Increase number of the class name if it exist in the dictionary
             else: di[cls_name] = 1
-        
+
+        # Function to detect which classes have more than threshold images
         im_count, threshold = 0, 30
         for cls_name, count in di.items():
             if count < threshold: im_count += 1
