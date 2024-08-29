@@ -75,10 +75,11 @@ class CustomDataset(Dataset):
         
         return di
     
+    # Function to get dir name
     def get_dir_name(self, path): return os.path.dirname(path)
-
+    # Function to get image label
     def get_im_label(self, path): return self.classes_dict[str(self.get_dir_name(path).split("/")[-1])]
-
+    # Function to get class information
     def get_cls_info(self): return list(self.classes_dict.keys()), len(self.classes_dict)
     
     def get_ims_paths(self, idx):
