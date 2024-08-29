@@ -44,9 +44,16 @@ class CustomDataset(Dataset):
         # Create class names dictionary    
         self.classes_dict = {cls_name: i for cls_name, i in zip(self.cls_names, range(len(self.cls_names)))}
         
+    # Function to return number of images in the dataset
     def __len__(self): return len(self.im_paths)
 
     def get_cls_len(self):
+
+        """
+
+        This function is used to get number of images in class.
+        
+        """
         
         di = {}
         for idx, im in enumerate(self.im_paths):
