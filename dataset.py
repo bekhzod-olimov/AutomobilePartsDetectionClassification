@@ -35,8 +35,11 @@ class CustomDataset(Dataset):
         elif lang == "ko": print("이미지 가져오는 중입니다...")
         # Initialize the class names list
         self.cls_names = []
+        # Go through every image path in the list
         for idx, im_path in enumerate(self.im_paths):
+            # Get class name
             cls_name = self.get_dir_name(im_path).split("/")[-1]
+            # Add the class name to the list
             if cls_name not in self.cls_names: self.cls_names.append(cls_name)
             
         self.classes_dict = {cls_name: i for cls_name, i in zip(self.cls_names, range(len(self.cls_names)))}
