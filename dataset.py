@@ -55,9 +55,13 @@ class CustomDataset(Dataset):
         
         """
         
+        # Initialize dictionary
         di = {}
+        # Go through every image path
         for idx, im in enumerate(self.im_paths):
+            # Get class name
             cls_name = self.get_dir_name(im).split("/")[-1]
+            # Add class name to the dictionary
             if cls_name in di: di[cls_name] += 1
             else: di[cls_name] = 1
         
