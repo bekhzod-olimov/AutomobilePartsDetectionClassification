@@ -27,10 +27,13 @@ class CustomDataset(Dataset):
         """
         
         super().__init__()
+
+        # Get image paths
         self.im_paths = glob(f"{root}/{data}/*/*{[im_file for im_file in im_files]}")
+        # Choose language for verbose
         if lang == "en": print("Obtaining images from the folders...")
         elif lang == "ko": print("이미지 가져오는 중입니다...")
-        
+        # Initialize the class names list
         self.cls_names = []
         for idx, im_path in enumerate(self.im_paths):
             cls_name = self.get_dir_name(im_path).split("/")[-1]
