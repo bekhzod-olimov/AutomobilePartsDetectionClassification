@@ -42,6 +42,17 @@ def run(args):
 
     def get_prediction(model, image_bytes, cls_names):
 
+        """
+
+        This function gets several arguments and returns prediction results.
+
+        Arguments:
+
+             model      - an AI model;
+             
+        
+        """
+
         results = {}
         im = tfs(Image.open(io.BytesIO(image_bytes)))
         pred = torch.nn.functional.softmax(model(im.unsqueeze(0).data), dim = 1)
