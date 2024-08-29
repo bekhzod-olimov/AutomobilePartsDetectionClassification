@@ -48,8 +48,9 @@ def run(args):
 
         Arguments:
 
-             model      - an AI model;
-             
+             model          - an AI model;
+             image_bytes    - input image in bytes;
+             cls_names      - class names from the trained dataset.
         
         """
 
