@@ -5,11 +5,14 @@ from PIL import Image; from utils import load_model
 from flask import Flask, jsonify, request
 from transformations import get_tfs
 
+# Initialize application
 app = Flask(__name__)
 
 def run(args):
 
+    # Get class names
     with open(f"saved_dls/{args.data}_cls_names.pkl", "rb") as f: cls_names = pickle.load(f)
+    # Get transformations to be applied
     tfs = get_tfs((224, 224))[1]
     url = "https://drive.google.com/file/d/1RaUVf1uadEHyhk-lUX4Kuaxgm3CiA4DI/view?usp=sharing" if args.data == "genesis" else ("https://drive.google.com/file/d/1m2xHGDxCG1XzKIYr00M-ugVlTAXuE7Ct/view?usp=share_link" if args.data == "kia" else "https://drive.google.com/file/d/1BUz7QKCfAOXXgtITJnmSisQxuv9txA1d/view?usp=share_link")
     model = load_model(model_name = args.model_name, num_classes = len(cls_names), checkpoint_path = f"ckpts/{args.data}_best.ckpt", url = url)
