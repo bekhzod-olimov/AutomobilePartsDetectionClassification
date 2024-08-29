@@ -23,9 +23,9 @@ class CustomDataset(Dataset):
              root              - path to the dir with images, str;
              data              - data name, str;
              transformations   - transformations to be applied, torchvision compose object;
-             
-        
+             im_files          - proper image files for training, list -> str.
         """
+        
         super().__init__()
         self.im_paths = glob(f"{root}/{data}/*/*{[im_file for im_file in im_files]}")
         if lang == "en": print("Obtaining images from the folders...")
