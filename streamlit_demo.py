@@ -3,7 +3,7 @@ import os, torch, sys, pickle, timm, argparse, numpy as np, streamlit as st
 from glob import glob; from streamlit_free_text_select import st_free_text_select
 from transformations import get_tfs  
 from torchvision.datasets import ImageFolder
-from utils import get_state_dict, predict, load_model
+from utils import get_state_dict, predict, load_model, resize
 from pytorch_grad_cam import GradCAM
 from pytorch_grad_cam.utils.image import show_cam_on_image
 from PIL import Image
@@ -57,26 +57,28 @@ def run(args):
         file = st.file_uploader('이미지를 업로드해주세요')
 
         # Get image and predicted class
-        im, out = predict(m = m, path = file, tfs = tfs, cls_names = cls_names) if file else predict(m = m, path = default_path, tfs = tfs, cls_names = cls_names)
-        st.write(f"입력된 {automobile_name} 차량 부품 이미지: ")
-        st.image(im)
-
-        im = tfs(im)
+        inp = file if file else default_path
+        im, out = predict(m = m, path = inp, tfs = tfs, cls_names = cls_names) 
+        im_tn = tfs(im)
 
         # Initialize GradCAM object
         cam = GradCAM(model = m, target_layers = [m.features[-1]], use_cuda = False)
 
         # Get a grayscale image
-        grayscale_cam = cam(input_tensor = im.unsqueeze(0).to("cpu"))[0, :]
+        grayscale_cam = cam(input_tensor = im_tn.unsqueeze(0).to("cpu"))[0, :]
 
         # Get visualization
-        visualization = show_cam_on_image((im * 255).cpu().numpy().transpose([1, 2, 0]).astype(np.uint8) / 255, grayscale_cam, image_weight = 0.55, colormap = 2, use_rgb = True)
-
-        st.write(f"AI 모델 성능 확인")
-
-        st.image(Image.fromarray(visualization))
+        visualization = show_cam_on_image((im_tn * 255).cpu().numpy().transpose([1, 2, 0]).astype(np.uint8) / 255, grayscale_cam, image_weight = 0.55, colormap = 2, use_rgb = True)
 
         st.write(f"입력된 {automobile_name} 차량 부품 이미지의 파트번호는 -> {out}입니다.")
+        
+        col1, col2 = st.columns(2)
+
+        with col1: st.header("입력된 이미지:");     st.write(f"입력된 {automobile_name} 차량 부품 이미지: "); st.image(inp)
+        with col2: st.header("AI 모델 성능 확인:"); st.write(f"GradCAM 결과: "); st.image(resize(Image.fromarray(visualization), im.size))
+        
+        
+        
     else: st.write("차량명을 선택해주세요")
     
 if __name__ == "__main__":
@@ -87,7 +89,6 @@ if __name__ == "__main__":
     # Add arguments
     parser.add_argument("-r", "--root", type = str, default = "sample_ims", help = "Root folder for test images")
     parser.add_argument("-mn", "--model_name", type = str, default = "rexnet_150", help = "Model name for backbone")
-    # parser.add_argument("-dt", "--data", type = str, default = "hyundai", help = "Dataset name")
     parser.add_argument("-dp", "--data_path", type = str, default = "saved_dls", help = "Dataset name")
     
     # Parse the arguments

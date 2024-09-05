@@ -1,4 +1,4 @@
-import os, torch, random, torchvision.transforms as tfs, numpy as np, xlsxwriter, openpyxl, matplotlib.pyplot as plt, timm
+import os, cv2, torch, random, torchvision.transforms as tfs, numpy as np, xlsxwriter, openpyxl, matplotlib.pyplot as plt, timm
 from openpyxl.styles import PatternFill
 from collections import OrderedDict as OD
 from PIL import Image, ImageFont
@@ -14,6 +14,8 @@ def predict_classes(qry_fms_all, pos_fms_all, cls_names, im_lbls, num_top_stop, 
         
         for ii, (val, ind) in enumerate(zip(vals, inds)):
             print(f"{val.item():.3f} 확률로 top{ii+1} 파트번호 -> {cls_names[im_lbls[ind.item()]]}")
+            
+def resize(im, im_size): return cv2.resize(np.array(im), im_size)
             
 def predict_classes_new(model, qry_fms_all, im_lbls, test_dl, model_name, data_name, device, cls_names, num_top_stop, top_k, lang, save_path = "test_dbs"):
     
