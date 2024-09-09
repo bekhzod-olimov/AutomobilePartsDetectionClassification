@@ -12,35 +12,24 @@ git clone https://github.com/vitasoftAI/Recycle-Park.git
 
 2. Create conda environment from yml file using the following script:
 
-a) Create a virtual environment using txt file:
+Create a virtual environment using txt file:
 
 - Create a virtual environment:
 
 ```python
-conda create -n speed python=3.9
+conda create -n ENV_NAME python=3.10
 ```
 
 - Activate the environment using the following command:
 
 ```python
-conda activate speed
+conda activate ENV_NAME
 ```
 
 - Install libraries from the text file:
 
 ```python
 pip install -r requirements.txt
-```
-
-b) Create a virtual environment using yml file:
-
-```python
-conda env create -f environment.yml
-```
-
-Then activate the environment using the following command:
-```python
-conda activate speed
 ```
 
 3. Data Visualization
