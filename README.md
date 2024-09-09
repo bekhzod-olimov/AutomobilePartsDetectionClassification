@@ -89,29 +89,23 @@ python inference.py --data_name DATA_NAME device = "cuda:0" --lang = "eng"
 
 6. Demo using pretrained AI models:
 
-a) Genesis
+a) demo using streamlit:
 
 ```python
-python gradio_demo_gen.py
+streamlit run streamlit_demo.py 
 ```
 
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/8480b0f9-ea14-468f-a58c-99ebb9cb6dee)
+First, type of a automobile company must be choosen:
+![image](https://github.com/user-attachments/assets/933bb214-9bae-4308-8c56-69aff37c3386)
 
-b) KIA
+b) demo using gradio:
 
 ```python
-python gradio_demo_kia.py
+python gradio_demo.py
 ```
 
 ![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/0143fa27-22d8-4d2f-adf6-92b13cbd826e)
 
-c) Hyundai
-
-```python
-python gradio_demo_hy.py
-```
-
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/b2c912ca-9b61-4fdc-9ac5-faaef60146cf)
 
 7. Flask application:
 
