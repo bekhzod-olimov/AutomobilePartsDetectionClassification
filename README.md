@@ -84,7 +84,7 @@ Training process progress:
 
 5. Conduct inference using the trained model:
 ```python
-python inference.py --data_name DATA_NAME --batch_size = 64 device = "cuda:0"
+python inference.py --data_name DATA_NAME device = "cuda:0" --lang = "eng"
 ```
 
 6. Demo using pretrained AI models:
