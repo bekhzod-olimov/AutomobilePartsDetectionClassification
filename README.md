@@ -36,15 +36,15 @@ pip install -r requirements.txt
 
 a) Genesis
 
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/156672f8-de64-49d0-9df5-caa606b5829a)
+![image](https://github.com/user-attachments/assets/72fbcb5f-7dec-4e01-866d-87ec5337176e)
 
 b) KIA
 
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/c10ff203-5d1a-47b5-8c28-e3828d2c4615)
+![image](https://github.com/user-attachments/assets/989e859e-431a-4181-b4a3-9968d74d673e)
 
 c) Hyundai
 
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/122a346b-1d4f-4f52-9f80-c20f30e7f79a)
+![image](https://github.com/user-attachments/assets/a67229c9-0d31-4cca-82c8-ad0c6b1726eb)
 
 4. Train the AI model using the following PyTorch Lightning training script:
 
@@ -62,6 +62,12 @@ Training process progress:
 
 ![image](https://github.com/user-attachments/assets/893330dd-f905-4d9c-93ec-29913b65b362)
 
+Learning Curves:
+
+![image](https://github.com/user-attachments/assets/ef9ea0d2-956b-4a48-8391-ef6f1d270121)
+
+![image](https://github.com/user-attachments/assets/166f4ad4-0ed5-4e2d-bad7-4dcb6918bac3)
+
 b) KIA
 
 ```python
@@ -72,6 +78,11 @@ Training process progress:
 
 ![image](https://github.com/user-attachments/assets/003ece4c-f4fd-4ab8-9751-47fa7eb47f20)
 
+Learning Curves:
+
+![image](https://github.com/user-attachments/assets/82a2f592-88c4-4bf1-adf3-996874632925)
+![image](https://github.com/user-attachments/assets/e6259ed3-3c64-43ad-b227-5aaacb44949c)
+
 c) Hyundai
 
 ```python
@@ -80,7 +91,8 @@ python train.py --data "new_hyundai" --batch_size = 64 devices = 4 --epochs 50
 
 Training process progress:
 
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/8a5c9cca-0083-4aa6-a488-80ce68414826)
+![image](https://github.com/user-attachments/assets/84851bee-1519-4a4b-a6d3-4954f7d877d7)
+
 
 5. Conduct inference using the trained model:
 ```python
