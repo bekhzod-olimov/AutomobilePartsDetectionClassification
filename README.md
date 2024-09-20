@@ -93,6 +93,11 @@ Training process progress:
 
 ![image](https://github.com/user-attachments/assets/84851bee-1519-4a4b-a6d3-4954f7d877d7)
 
+Learning Curves:
+
+![image](https://github.com/user-attachments/assets/da4d9b94-5d28-40b3-bde6-cdf7b710f768)
+![image](https://github.com/user-attachments/assets/2c45df08-5d20-4fb4-bd97-c59277f277f2)
+
 
 5. Conduct inference using the trained model:
 ```python
