@@ -50,7 +50,7 @@ c) Hyundai
 
 Train process arguments can be changed based on the following information:
 
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/df154acb-d49c-4096-84b7-7c1d632d6a19)
+![image](https://github.com/user-attachments/assets/1b15a6ea-5444-4bd7-85c1-fef6cff1a51c)
 
 a) Genesis
 
@@ -60,7 +60,7 @@ python train.py --data "genesis30_50" --batch_size = 64 devices = 4 --epochs 50
 
 Training process progress:
 
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/cb2b2dcc-0c58-4942-af65-0656aa0ea288)
+![image](https://github.com/user-attachments/assets/893330dd-f905-4d9c-93ec-29913b65b362)
 
 b) KIA
 
@@ -70,7 +70,7 @@ python train.py --data "new_kia" --batch_size = 64 devices = 4 --epochs 50
 
 Training process progress:
 
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/196483c9-c295-4af5-a417-881bd9106b4f)
+![image](https://github.com/user-attachments/assets/003ece4c-f4fd-4ab8-9751-47fa7eb47f20)
 
 c) Hyundai
 
@@ -115,8 +115,4 @@ a) Run the application in the terminal:
 python app.py
 ```
 
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/09001344-a4f4-493a-b2bd-d454de305828)
-
-b) Go to the flask.ipynb file and run the cell:
-
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/aa2a3c1c-6485-4055-a2a4-8f2c2ad16cd1)
+b) Go to the flask.py file, copy the code to jupyter notebook and run the cell.
