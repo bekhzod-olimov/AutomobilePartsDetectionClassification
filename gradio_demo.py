@@ -1,16 +1,13 @@
 # Import libraries
-import os, torch, pickle, timm, argparse, gradio as gr, numpy as np
-from transformations import get_tfs
-from glob import glob
-from PIL import Image, ImageFont
-from torchvision.datasets import ImageFolder
-from torchvision import transforms as T
-from pytorch_grad_cam import GradCAM
+import os, torch, pickle, timm, warnings, argparse, gradio as gr, numpy as np
+from transformations import get_tfs; from glob import glob
+from PIL import Image, ImageFont; from torchvision.datasets import ImageFolder
+from torchvision import transforms as T; from pytorch_grad_cam import GradCAM
 from pytorch_grad_cam.utils.image import show_cam_on_image
 from utils import get_state_dict, load_model
-import warnings
-warnings.filterwarnings("ignore")
 
+# Turn off warnings
+warnings.filterwarnings("ignore")
 
 def run(args):
     
