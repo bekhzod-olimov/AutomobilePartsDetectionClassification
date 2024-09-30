@@ -11,7 +11,8 @@ torchmetrics
 pandas
 ipykernel 
 ipywidgets
-streamlit
+streamlit==1.15.2
 grad-cam==1.4.6
 gradio==3.50
 streamlit_free_text_select
+altair==4.0.0
