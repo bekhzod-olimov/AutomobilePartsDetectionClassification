@@ -31,7 +31,7 @@ def run(args):
     num_classes = len(cls_names)
     model_name = "제네시스" if args.data == "genesis" else ("기아" if args.data == "kia" else "현대")
     checkpoint_path = f"ckpts/{args.data}_best.ckpt"
-    url = "https://drive.google.com/file/d/1RaUVf1uadEHyhk-lUX4Kuaxgm3CiA4DI/view?usp=sharing" if args.data == "genesis" else ("https://drive.google.com/file/d/1m2xHGDxCG1XzKIYr00M-ugVlTAXuE7Ct/view?usp=share_link" if args.data == "kia" else "https://drive.google.com/file/d/1BUz7QKCfAOXXgtITJnmSisQxuv9txA1d/view?usp=share_link")
+    url = "https://drive.google.com/file/d/1RaUVf1uadEHyhk-lUX4Kuaxgm3CiA4DI/view?usp=share_link" if args.data == "genesis" else ("https://drive.google.com/file/d/1m2xHGDxCG1XzKIYr00M-ugVlTAXuE7Ct/view?usp=share_link" if args.data == "kia" else "https://drive.google.com/file/d/1BUz7QKCfAOXXgtITJnmSisQxuv9txA1d/view?usp=share_link") 
     
     # Initialize transformations to be applied
     tfs = get_tfs((224, 224))[1]
@@ -104,7 +104,7 @@ if __name__ == "__main__":
     # Add arguments
     parser.add_argument("-r", "--root", type = str, default = "/home/ubuntu/workspace/bekhzod/recycle_park/sample_ims", help = "Root folder for test images")
     parser.add_argument("-mn", "--model_name", type = str, default = "rexnet_150", help = "Model name for backbone")
-    parser.add_argument("-dt", "--data", type = str, default = "kia", help = "Dataset name")
+    parser.add_argument("-dt", "--data", type = str, default = "genesis", help = "Dataset name")
     parser.add_argument("-dp", "--data_path", type = str, default = "saved_dls", help = "Dataset name")
     
     # Parse the arguments

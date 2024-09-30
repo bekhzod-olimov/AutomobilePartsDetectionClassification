@@ -161,7 +161,7 @@ def predict(m, path, tfs, cls_names):
 
 def get_state_dict(checkpoint_path):
     
-    checkpoint = torch.load(checkpoint_path)
+    checkpoint = torch.load(checkpoint_path, map_location = "cpu")
     new_state_dict = OD()
     for k, v in checkpoint["state_dict"].items():
         name = k.replace("model.", "") # remove `model.`
