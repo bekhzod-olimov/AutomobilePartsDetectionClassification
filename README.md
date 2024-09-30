@@ -123,10 +123,9 @@ python gradio_demo.py
 
 ![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/0143fa27-22d8-4d2f-adf6-92b13cbd826e)
 
- *** Genesis: 
- 
- https://github.com/bekhzod-olimov/AutomobilePartsDetectionClassification/blob/main/screenshots/gradio_genesis.png
-
+ *** [Genesis](https://github.com/bekhzod-olimov/AutomobilePartsDetectionClassification/blob/main/screenshots/gradio_genesis.png)
+ *** [Hyundai](https://github.com/bekhzod-olimov/AutomobilePartsDetectionClassification/blob/main/screenshots/gradio_hyundai.png)
+ *** [KIA](https://github.com/bekhzod-olimov/AutomobilePartsDetectionClassification/blob/main/screenshots/gradio_kia.png)
 
 7. Flask application:
 
