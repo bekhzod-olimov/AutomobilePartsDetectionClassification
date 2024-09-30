@@ -106,7 +106,7 @@ python inference.py --data_name DATA_NAME device = "cuda:0" --lang = "eng"
 
 6. Demo using pretrained AI models:
 
-a) demo using streamlit:
+a) [demo using streamlit](http://192.168.0.131:8501):
 
 ```python
 streamlit run streamlit_demo.py 
@@ -114,6 +114,18 @@ streamlit run streamlit_demo.py
 
 First, type of a automobile company must be choosen:
 ![image](https://github.com/user-attachments/assets/933bb214-9bae-4308-8c56-69aff37c3386)
+
+*** Genesis ***
+
+<img width="1594" alt="streamlit_genesis" src="https://github.com/user-attachments/assets/9501fe41-cec0-4b59-bffa-2765ef5eba9b">
+
+*** Kia ***
+
+<img width="1584" alt="streamlit_kia" src="https://github.com/user-attachments/assets/ab340d3e-7e2e-4860-aa47-6514ff5c55b2">
+
+*** Hyundai ***
+
+<img width="1583" alt="streamlit_hyundai" src="https://github.com/user-attachments/assets/510ccec1-cfce-416d-bef2-1eb60e8f921d">
 
 b) demo using gradio:
 
