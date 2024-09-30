@@ -121,12 +121,17 @@ b) demo using gradio:
 python gradio_demo.py
 ```
 
+*** Genesis ***
+
 <img width="1522" alt="gradio_genesis" src="https://github.com/user-attachments/assets/bb706fa5-161a-4712-8e41-3565e20a8329">
 
+*** Kia ***
 
- *** [Genesis](https://github.com/bekhzod-olimov/AutomobilePartsDetectionClassification/blob/main/screenshots/gradio_genesis.png)
- *** [Hyundai](https://github.com/bekhzod-olimov/AutomobilePartsDetectionClassification/blob/main/screenshots/gradio_hyundai.png)
- *** [KIA](https://github.com/bekhzod-olimov/AutomobilePartsDetectionClassification/blob/main/screenshots/gradio_kia.png)
+<img width="1516" alt="gradio_kia" src="https://github.com/user-attachments/assets/3e4c1454-5f80-432d-a282-e8b011e396ca">
+
+*** Hyundai ***
+
+<img width="1511" alt="gradio_hyundai" src="https://github.com/user-attachments/assets/a1d5dc89-0afc-4dad-b4c0-7332697737bd">
 
 7. Flask application:
 
