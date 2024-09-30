@@ -121,7 +121,8 @@ b) demo using gradio:
 python gradio_demo.py
 ```
 
-![image](https://github.com/vitasoftAI/Recycle-Park/assets/50166164/0143fa27-22d8-4d2f-adf6-92b13cbd826e)
+<img width="1522" alt="gradio_genesis" src="https://github.com/user-attachments/assets/bb706fa5-161a-4712-8e41-3565e20a8329">
+
 
  *** [Genesis](https://github.com/bekhzod-olimov/AutomobilePartsDetectionClassification/blob/main/screenshots/gradio_genesis.png)
  *** [Hyundai](https://github.com/bekhzod-olimov/AutomobilePartsDetectionClassification/blob/main/screenshots/gradio_hyundai.png)
