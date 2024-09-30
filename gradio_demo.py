@@ -15,7 +15,7 @@ def run(args):
     
     This function gets parsed arguments and runs the script.
     
-    Parameter:
+    Parameters:
     
         args   - parsed arguments, argparser object;
         
@@ -57,7 +57,7 @@ def run(args):
         
             inp            - input image, array.
             
-        Output:
+        Outputs:
         
             visualization  - GradCAM visualization, GradCAM object;
             class_name     - class name of the prediction, str.
@@ -99,7 +99,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Object Classification Demo")
     
     # Add arguments
-    parser.add_argument("-r", "--root", type = str, default = "/home/ubuntu/workspace/bekhzod/recycle_park/sample_ims", help = "Root folder for test images")
+    parser.add_argument("-r", "--root", type = str, default = "path/to/test/images", help = "Root folder for test images")
     parser.add_argument("-mn", "--model_name", type = str, default = "rexnet_150", help = "Model name for backbone")
     parser.add_argument("-dt", "--data", type = str, default = "genesis", help = "Dataset name")
     parser.add_argument("-dp", "--data_path", type = str, default = "saved_dls", help = "Dataset name")
