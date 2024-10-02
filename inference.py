@@ -10,11 +10,15 @@ def run(args):
     
     tr_tfs, te_tfs = get_tfs((224, 224))
     
+    # Get dataset
     ds = CustomDataset(root = os.path.dirname(args.root), data = args.data_name, lang = args.lang, transformations = te_tfs)
+    # Get class names and number of classes
     cls_names, num_classes = ds.get_cls_info()
+    # Load test dataset
     test_ds = InferenceCustomDataset(root = args.root, data = args.data_name, transformations = te_tfs)
     print(f"There are {len(test_ds)} images to be annotated!")
     
+    # Create dataloaders
     dl = DataLoader(dataset = ds, batch_size = 64, shuffle = True, num_workers = 8)
     inf_dl = DataLoader(dataset = test_ds, batch_size = 64, shuffle = True, num_workers = 8)
     
@@ -49,11 +53,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Image Classification Inference Arguments")
     
     # Add arguments to the parser
-    parser.add_argument("-r", "--root", type = str, default = "/mnt/data/bekhzod/recycle_park/inference", help = "Path to data")
+    parser.add_argument("-r", "--root", type = str, default = "path/to/inference/data", help = "Path to data")
     parser.add_argument("-dn", "--data_name", type = str, default = "genesis", help = "Dataset name")
-    parser.add_argument("-mn", "--model_name", type = str, default = 'rexnet_150', help = "Model name for backbone")
+    parser.add_argument("-mn", "--model_name", type = str, default = 'rexnet_150', help = "Model name for the classification")
     parser.add_argument("-l", "--lang", type = str, default = "ko", help = "Language to be used to run the code")
-    parser.add_argument("-d", "--device", type = str, default = "cuda:1", help = "GPU device name")
+    parser.add_argument("-d", "--device", type = str, default = "cuda", help = "GPU device name")
     parser.add_argument("-sm", "--saved_model_path", type = str, default = "saved_models/", help = "Path to the directory with the trained model")
     
     # Parse the added arguments
