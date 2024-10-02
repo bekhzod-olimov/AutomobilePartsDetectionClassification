@@ -23,6 +23,7 @@ def run(args):
     def predict():
 
         """
+        
         This functon classifies an input image and converts the output into json format.
 
         Output:
@@ -46,11 +47,15 @@ def run(args):
 
         This function gets several arguments and returns prediction results.
 
-        Arguments:
+        Parameters:
 
              model          - an AI model;
              image_bytes    - input image in bytes;
              cls_names      - class names from the trained dataset.
+
+        Output:
+
+             results        - prediction results, dict.
         
         """
 
