@@ -77,11 +77,11 @@ def run(args):
 if __name__ == "__main__":
     
     # Initialize argument parser
-    parser = argparse.ArgumentParser(description = "Object Classification Demo")
+    parser = argparse.ArgumentParser(description = "Object Classification App")
     
     # Add arguments
     parser.add_argument("-dt", "--data", type = str, default = "kia", help = "Dataset name")
-    parser.add_argument("-mn", "--model_name", type = str, default = "rexnet_150", help = "Model name for backbone")
+    parser.add_argument("-mn", "--model_name", type = str, default = "rexnet_150", help = "Model name for classification")
     
     # Parse the arguments
     args = parser.parse_args() 
